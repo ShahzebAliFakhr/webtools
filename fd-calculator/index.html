@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--========== BOX ICONS ==========-->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <!--========== CSS ==========-->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <!-- <link rel="stylesheet" href="assets/css/custom.css"> -->
+
+        <title>FD Calculator</title>
+    </head>
+    <body>
+
+        <!--========== SCROLL TOP ==========-->
+        <a href="#" class="scrolltop" id="scroll-top">
+            <i class='bx bx-chevron-up scrolltop__icon'></i>
+        </a>
+
+        <!--========== HEADER ==========-->
+        <header class="l-header bg-white" id="header">
+            <nav class="nav bd-container">
+                <a href="#" class="nav__logo">FD Calculator</a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+                        <li class="nav__item"><a href="#menu" class="nav__link">Menu</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contact us</a></li>
+
+                        <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container section-margin">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card shadow p-3">
+                        <h2 class="mb-3">FD Calculator</h2>
+                        <div class="form-group">
+                            <label for="inputTI">Total Investment (Rs.)</label>
+                            <input class="form-control" name="TotalInvestment" id="inputTI" type="number" step="9000" value="100000" min="1000" max="100000000" oninput="showTotalInvestmentVal(this.value)" />
+                             <input class="form-range" name="realTotalInvestmentAmount" id="sliderTI" type="range" step="9000" value="100000" min="1000" max="100000000" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputExpectedReturns">Rate of Interest (%)</label>
+                            <input class="form-control" name="ExpectedReturns" id="inputROI" type="number" value="6.5" min="1" max="15" step="0.5" oninput="showExpectedReturnsVal(this.value)" />
+                             <input class="form-range" name="realExpectedReturns" id="sliderROI" type="range" value="6.5" min="1" max="15" step="0.5">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputTimePeriod">Time Period</label>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <input class="form-control" name="TimePeriod" id="inputTenure" type="number" value="5" min="1" max="11" step="1" oninput="showTimePeriodVal(this.value)" />
+                                </div>
+                                <div class="col-md-4">
+                                    <select class="form-control" name="tp_mode" id="tp_mode">
+                                        <option value="YY" selected>Year</option>
+                                        <option value="MM">Month</option>
+                                        <option value="DD">Day</option>
+                                    </select>
+                                </div>
+                            </div> 
+                            <input class="form-range" name="realTimePeriod" id="sliderTenure" type="range" value="5" min="1" max="11" step="1">
+                        </div>
+                        <div class="result-box">
+                            Total Investment: <span id="r1"></span>
+                        </div>
+                        <div class="result-box">
+                            Total Interest: <span id="r2"></span>
+                        </div>
+                        <div class="result-box">
+                            Maturity Value: <span id="r3"></span>
+                        </div>
+                    </div>
+                    <div class="social-share mt-3 mb-3">
+                        <!-- Facebook -->
+                        <a class="btn" style="background-color: #3b5998" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+                        
+                        <!-- Twitter -->
+                        <a class="btn" style="background-color: #55acee" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+
+                        <!-- Google -->
+                        <a class="btn" style="background-color: #dd4b39" href="#!" role="button"><i class="fab fa-google"></i></a>
+
+                        <!-- Instagram -->
+                        <a class="btn" style="background-color: #ac2bac" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+
+                        <!-- Linkedin -->
+                        <a class="btn" style="background-color: #0082ca" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+
+                        <!-- Pinterest -->
+                        <a class="btn" style="background-color: #c61118" href="#!" role="button"><i class="fab fa-pinterest"></i></a>
+
+                        <!-- Vkontakte -->
+                        <a class="btn" style="background-color: #4c75a3" href="#!" role="button"><i class="fab fa-vk"></i></a>
+
+                        <!-- Stack overflow -->
+                        <a class="btn" style="background-color: #ffac44" href="#!" role="button"><i class="fab fa-stack-overflow"></i></a>
+
+                        <!-- Youtube -->
+                        <a class="btn" style="background-color: #ed302f" href="#!" role="button"><i class="fab fa-youtube"></i></a>
+
+                        <!-- Slack -->
+                        <a class="btn" style="background-color: #481449" href="#!" role="button"><i class="fab fa-slack-hash"></i></a>
+
+                        <!-- Github -->
+                        <a class="btn" style="background-color: #333333" href="#!" role="button"><i class="fab fa-github"></i></a>
+
+                        <!-- Dribbble -->
+                        <a class="btn" style="background-color: #ec4a89" href="#!" role="button"><i class="fab fa-dribbble"></i></a>
+
+                        <!-- Reddit -->
+                        <a class="btn" style="background-color: #ff4500" href="#!" role="button"><i class="fab fa-reddit-alien"></i></a>
+
+                        <!-- Whatsapp -->
+                        <a class="btn" style="background-color: #25d366" href="#!" role="button"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <div class="mt-3 mb-3">
+                        <img src="assets/img/ad.jpg" class="img-fluid">
+                    </div>
+                    <div class="mt-3 mb-3 text-justify">
+                        <h2 class="mb-3">Lorem Ipsum Heading</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin efficitur tincidunt viverra. Sed lacinia lectus enim, quis semper neque porta non. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc mattis dignissim orci in iaculis. Donec in nibh non leo vulputate semper sit amet id leo. Ut euismod ex vel nunc molestie ornare. Mauris condimentum magna pretium odio imperdiet, id porta eros pharetra. Quisque magna erat, tincidunt sit amet imperdiet ut, ultricies ac ex. Morbi sed felis ipsum. Quisque ultrices magna metus, ut congue est maximus non. In in libero ac erat venenatis fermentum in sed lectus. Cras quis diam dapibus, dictum urna nec, fringilla velit. Praesent id tincidunt neque. Nulla porta odio quam, eget faucibus sapien feugiat ac.</p>
+
+                        <p>Vivamus ornare, odio sollicitudin interdum dapibus, diam lorem consectetur turpis, nec varius mi ante ut nisl. Nam consequat suscipit molestie. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce justo urna, scelerisque id ex ac, pharetra accumsan sapien. Fusce pellentesque dui nec commodo imperdiet. Aenean egestas pharetra elementum. Fusce nec felis hendrerit est venenatis rutrum. Cras iaculis magna ullamcorper, interdum purus in, egestas justo. Sed vestibulum ipsum tempus tellus porttitor, sed condimentum nulla ultrices.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-1 chart p-2">
+                        <canvas id="myChart" width="300" height="300"></canvas>
+                    </div>
+                    <div class="card mb-1">
+                        <img src="assets/img/ad-square.jpg" class="img-fluid">
+                    </div>
+                    <div class="card mb-1">
+                        <img src="assets/img/ad-square.jpg" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--========== FOOTER ==========-->
+        <footer class="footer section bd-container">
+            <div class="footer__container bd-grid">
+                <div class="footer__content">
+                    <a href="#" class="footer__logo">FD Calculator</a>
+                    <span class="footer__description">Restaurant</span>
+                    <div>
+                        <a href="#" class="footer__social"><i class='bx bxl-facebook'></i></a>
+                        <a href="#" class="footer__social"><i class='bx bxl-instagram'></i></a>
+                        <a href="#" class="footer__social"><i class='bx bxl-twitter'></i></a>
+                    </div>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Services</h3>
+                    <ul>
+                        <li><a href="#" class="footer__link">Delivery</a></li>
+                        <li><a href="#" class="footer__link">Pricing</a></li>
+                        <li><a href="#" class="footer__link">Fast food</a></li>
+                        <li><a href="#" class="footer__link">Reserve your spot</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Information</h3>
+                    <ul>
+                        <li><a href="#" class="footer__link">Event</a></li>
+                        <li><a href="#" class="footer__link">Contact us</a></li>
+                        <li><a href="#" class="footer__link">Privacy policy</a></li>
+                        <li><a href="#" class="footer__link">Terms of services</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Adress</h3>
+                    <ul>
+                        <li>Lima - Peru</li>
+                        <li>Jr Union #999</li>
+                        <li>999 - 888 - 777</li>
+                        <li>tastyfood@email.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; 2020 Bedimcode. All right reserved</p>
+        </footer>
+
+        <!--========== SCROLL REVEAL ==========-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--========== MAIN JS ==========-->
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/custom.js"></script>
+        <script src="assets/js/chart.min.js"></script>
+        <script type="text/javascript">
+            window.onload = calculateIt();
+        </script>
+    </body>
+</html>

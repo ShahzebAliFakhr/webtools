@@ -1,0 +1,105 @@
+/* THEME DEFAULT */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', 'Trebuchet MS';
+}
+
+a {
+    color: #000;
+}
+
+.no-margins {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.shadow {
+    box-shadow: .5px .5px 3px 0px #ccc;
+}
+
+#webtools {
+    padding: 30px 10px;
+}
+
+#webtools .form-control {
+    padding: 10px;
+}
+
+#webtools .form-control:focus {
+    border-color: #28a745;
+    box-shadow: none;
+}
+
+#navigation {
+    background-color: #fff !important;
+    box-shadow: 1px 1px 5px 1px #ccc;
+    padding: 20px;
+}
+
+#navigation .nav-item {
+    margin: 0 10px;
+}
+
+#navigation .nav-item .nav-link, #navigation .navbar-brand {
+    color: #000 !important;
+}
+
+.navbar-dark .navbar-toggler {
+    padding: 10px;
+    color: #000 !important;
+    border-color: #000 !important;
+}
+
+.footer {
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    padding: 20px 10px;
+}
+
+.footer a {
+    color: #CCCECF;
+}
+
+.footer .social-links a {
+    padding: 10px 20px;
+    color: #fff;
+}
+
+@media(max-width: 991px){
+    .text-center-lg {
+        text-align: center !important;
+        margin-bottom: 10px;
+    }
+}
+
+@media(max-width:600px){
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    h4 {
+        font-size: 14px;
+    }
+
+    h5 {
+        font-size: 13px;
+    }
+
+    h6 {
+        font-size: 12px;
+    }
+}
